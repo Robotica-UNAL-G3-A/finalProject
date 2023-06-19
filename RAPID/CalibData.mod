@@ -4,5 +4,4 @@ MODULE CalibData
     TASK PERS wobjdata Estante:=[FALSE,TRUE,"",[[100,-400,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
     TASK PERS wobjdata Banda_Tr:=[FALSE,TRUE,"",[[250,600,230],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
     TASK PERS wobjdata valde:=[FALSE,TRUE,"",[[477.692,200,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
-    
 ENDMODULE
