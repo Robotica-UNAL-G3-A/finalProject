@@ -1,39 +1,96 @@
-MODULE Module1   
-!***********************************************************
-    !
-    ! Module:  Module1
-    !
-    ! Description:
-    !   pick and place routine
-    !
-    ! Author: Sebastian Dueñas
-    !
-    ! Version: 1.0
-    !
-    !***********************************************************
-    CONST robtarget Target_10:=[[394.5,288,51.5],[0,0,-0.707106781,0.707106781],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget Target_20:=[[134.5,288,51.5],[0,0,-0.707106781,0.707106781],[1,1,0,6],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget Target_30:=[[394.5,150,51.5],[0,0,-0.707106781,0.707106781],[1,1,0,6],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget Target_40:=[[134.5,150,51.5],[0,0,-0.707106781,0.707106781],[1,1,0,6],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget Target_50:=[[394.5,12,51.5],[0,0,-0.707106781,0.707106781],[1,1,0,6],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget Target_60:=[[140.229,12,51.5],[0,0,-0.707106781,0.707106781],[1,0,0,6],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]]; 
+MODULE Module1
+    CONST robtarget ficha_approach_gen:=[[200,100,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_10:=[[394.5,-51.5,288],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_11:=[[394.5,-51.5,291],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_12:=[[394.5,-51.5,294],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_13:=[[394.5,-51.5,297],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_10:=[[394.5,-51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_11:=[[394.5,51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST jointtarget HOME:=[[0,0,0,0,30,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_20:=[[134.5,-51.5,288],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_21:=[[134.5,-51.5,291],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_22:=[[134.5,-51.5,294],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_23:=[[134.5,-51.5,297],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_20:=[[134.5,-51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_21:=[[134.5,51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_30:=[[394.5,-51.5,150],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_31:=[[394.5,-51.5,153],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_32:=[[394.5,-51.5,156],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_33:=[[394.5,-51.5,159],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_30:=[[394.5,-51.5,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_31:=[[394.5,51.5,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget banda_approach:=[[0,-100,140],[0,1,0,0],[0,-2,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
-    !***********************************************************
-    !
-    ! Procedure main
-    !
-    !   This is the entry point of your program 
-    !
-    !***********************************************************
+    CONST robtarget banda_10:=[[0,-50,140],[0,1,0,0],[0,-2,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget banda_20:=[[0,10,140],[0,1,0,0],[0,-2,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget banda_30:=[[0,10,160],[0,1,0,0],[0,-2,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget banda_40:=[[0,10,300],[0,1,0,0],[0,-2,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    
+    CONST robtarget valde_40:=[[0,-50,140],[0,1,0,0],[0,-2,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget valde_30:=[[0,10,140],[0,1,0,0],[0,-2,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget valde_20:=[[0,10,160],[0,1,0,0],[0,-2,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget valde_10:=[[0,10,300],[0,1,0,0],[0,-2,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    
+    
     PROC main()
-        !Add your code here
+        HomeP;
+        get_valde;
+        put_valde;
+        
+         HomeP;
+        get_ficha_1;
+        get_ficha_2;
+        get_ficha_3;
+        HomeP;
     ENDPROC
-    PROC Path_10()
-        MoveL Target_10,v1000,z100,chupa\WObj:=Estante;
-        MoveL Target_20,v1000,z100,chupa\WObj:=Estante;
-        MoveL Target_30,v1000,z100,chupa\WObj:=Estante;
-        MoveL Target_40,v1000,z100,chupa\WObj:=Estante;
-        MoveL Target_50,v1000,z100,chupa\WObj:=Estante;
-        MoveL Target_60,v1000,z100,chupa\WObj:=Estante;
+    PROC get_ficha_1()
+        MoveL ficha_approach_gen,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_10,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_11,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_12,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_13,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_10,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_11,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v1000,z100,chupa\WObj:=Estante;
+    ENDPROC
+    PROC HomeP()
+        MoveAbsJ HOME,v500,z10,chupa\WObj:=Estante;
+    ENDPROC
+    PROC fichas1()
+
+    ENDPROC
+    PROC get_ficha_2()
+        MoveL ficha_approach_gen,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_20,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_21,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_22,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_23,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_20,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_21,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v1000,z100,chupa\WObj:=Estante;
+    ENDPROC
+    PROC get_ficha_3()
+        MoveL ficha_approach_gen,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_30,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_31,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_32,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_33,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_30,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_31,v1000,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v1000,z100,chupa\WObj:=Estante;
+    ENDPROC
+    
+    PROC get_valde()
+        MoveL banda_10,v1000,z100,gancho\WObj:=Banda_Tr;
+        MoveL banda_20,v1000,z100,gancho\WObj:=Banda_Tr;
+        MoveL banda_30,v1000,z100,gancho\WObj:=Banda_Tr;
+        MoveL banda_40,v1000,z100,gancho\WObj:=Banda_Tr;
+    ENDPROC
+    PROC put_valde()
+        MoveL valde_10,v1000,z100,gancho\WObj:=valde;
+        MoveL valde_20,v1000,z100,gancho\WObj:=valde;
+        MoveL valde_30,v1000,z100,gancho\WObj:=valde;
+        MoveL valde_40,v1000,z100,gancho\WObj:=valde;
+
     ENDPROC
 ENDMODULE
