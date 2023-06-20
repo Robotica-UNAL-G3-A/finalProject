@@ -14,15 +14,17 @@ MODULE Module1
     ! slow speed v50
     
     ! Variable Declarations
-    VAR num num_fichas_1 := 4;
+    VAR num num_fichas_1 := 0;
     VAR num num_fichas_2 := 3;
     VAR num num_fichas_3 := 3;
     VAR num num_fichas_4 := 3;
     VAR num num_fichas_5 := 3;
     VAR num num_fichas_6 := 3;
+    VAR num selected_ficha := 1;
+    VAR num choose_ficha{3}:=[1,2,3];    
+      
     
     VAR string message := "Hello, RobotStudio!";    
-    !VAR wobjdata ficha := 
     
     
     CONST jointtarget HOME:=[[0,0,0,0,30,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -90,11 +92,11 @@ MODULE Module1
     CONST robtarget get_valde_A_10:=[[163.492725357,-151.686904813,119.198419433],[0.495128824,-0.525234412,-0.617233934,-0.31304717],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget get_valde_A_20:=[[174.447540619,6.684241585,152.15910429],[0.495128491,-0.525234749,-0.617234074,-0.313046855],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget get_valde_A_30:=[[174.447507596,6.684316442,203.389814206],[0.495128486,-0.525234784,-0.617234073,-0.313046806],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget get_valde_A_40:=[[460.505499897,-391.66497861,203.389814206],[0.363513977,-0.700008659,-0.408457288,-0.45935619],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    
-    CONST robtarget get_valde_B_10:=[[0.000470652,-0.000018612,170],[0.363513973,-0.700008597,-0.408457405,-0.459356184],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget get_valde_B_20:=[[0.000470652,-0.000018612,130],[0.363513973,-0.700008597,-0.408457405,-0.459356184],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget get_valde_B_30:=[[0.000472496,-129.959394283,130],[0.363514037,-0.700008559,-0.408457414,-0.459356184],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+
+    CONST robtarget get_valde_B_10:=[[0.000499897,0.00002139,433.389814206],[0.363513977,-0.700008659,-0.408457288,-0.45935619],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget get_valde_B_20:=[[0.000470652,-0.000018612,190],[0.363513973,-0.700008597,-0.408457405,-0.459356184],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget get_valde_B_30:=[[0.000470652,-0.000018612,145],[0.363513973,-0.700008597,-0.408457405,-0.459356184],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget get_valde_B_40:=[[0.000472496,-129.959394283,145],[0.363514037,-0.700008559,-0.408457414,-0.459356184],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     CONST robtarget put_valde_10:=[[-83.007905016,-21.784827301,180.00001869],[0.000000016,-0.466568243,0.884485203,-0.000000071],[0,-1,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget put_valde_20:=[[-41.438608698,-21.784702645,133.518907054],[0.243389654,0.44855593,-0.850338437,-0.128388458],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -102,30 +104,34 @@ MODULE Module1
     
     
     PROC main()
-        ! neumatic valve  
-        Reset DO_01;         
-        
-        !Reset DO_03; 
+        ! neumatic valve  activate
+        Reset DO_01;  
+        ! neumatic valve  deactivate
+        RESET DO_02;
         HomeP;
         get_valde;
-                
-        get_ficha_1;
-        put_valde;
-        
-        get_ficha_2;
-        put_valde;
-        
-        get_ficha_3;
-        put_valde;
-        
-        get_ficha_4;
-        put_valde;
-        
-        get_ficha_5;
-        put_valde;
-        
-        get_ficha_6;
-        put_valde;
+         
+        FOR k FROM 1 TO 3 DO
+            !TPWrite(string(k));
+            !TPWrite(fichaSelected{k});
+            selected_ficha := choose_ficha{k};    
+            IF selected_ficha=1 THEN
+                get_ficha_1;
+            ELSEIF    selected_ficha=2 THEN        
+                get_ficha_2;
+            ELSEIF    selected_ficha=3 THEN
+                get_ficha_3;
+            ELSEIF    selected_ficha=4 THEN
+                get_ficha_4;
+            ELSEIF  selected_ficha=5 THEN
+                get_ficha_5;
+            ELSEIF    selected_ficha=2 THEN
+                get_ficha_6;
+            ELSE
+                TPWrite("ficha seleccionada no valida");
+            ENDIF
+                    put_valde;            
+        ENDFOR
         
         HomeP;
         
@@ -134,23 +140,58 @@ MODULE Module1
         
     ENDPROC
     
+    PROC HomeP()
+        MoveAbsJ HOME,v200,z10,chupa\WObj:=Estante;
+    ENDPROC
+    
+    PROC get_valde()
+        MoveL get_valde_A_10,v200,z100,gancho\WObj:=Banda_Tr;
+        MoveL get_valde_A_20,v200,z100,gancho\WObj:=Banda_Tr;
+        MoveL get_valde_A_30,v50,z100,gancho\WObj:=Banda_Tr;
+        WaitTime(2);
+        MoveL get_valde_B_10,v200,z100,gancho\WObj:=valde_en_suelo; 
+        WaitTime(2);
+        MoveL get_valde_B_20,v200,z100,gancho\WObj:=valde_en_suelo;
+        WaitTime(2);
+        MoveL get_valde_B_30,v50,z100,gancho\WObj:=valde_en_suelo;
+        MoveL get_valde_B_40,v1000,z100,gancho\WObj:=valde_en_suelo;
+    ENDPROC
+ 
+    PROC put_valde()
+        MoveL put_valde_10,v200,z100,chupa\WObj:=valde_en_suelo;
+        MoveL put_valde_20,v50,z100,chupa\WObj:=valde_en_suelo;
+        
+        WaitTime(1);
+        RESET DO_01;
+        SET DO_02;
+        WaitTime(1);
+        RESET DO_02;
+      
+        
+        TPWrite("valvula desactivada: dejando ficha");        
+    ENDPROC
+    
     PROC get_ficha_1()
         MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_11,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_10,v200,z100,chupa\WObj:=Estante;
         
+        SET DO_01;
+        RESET DO_02;        
+        TPWrite("valvula activada: recogiendo ficha 1");
+        
         IF num_fichas_1 = 3 THEN
             MoveL ficha_13,v50,z100,chupa\WObj:=Estante;
-            
         ELSEIF num_fichas_1 = 2 THEN
             MoveL ficha_12,v50,z100,chupa\WObj:=Estante;
         ELSEIF num_fichas_1 = 1 THEN
             MoveL ficha_11,v50,z100,chupa\WObj:=Estante;
-        ELSE
-            !MoveL ficha_10,v50,z100,chupa\WObj:=Estante;            
+        ELSEIF num_fichas_1 <= 0 THEN 
+            TPWrite("no hay fichas 1 por favor llenar stock");
         ENDIF
-        Set DO_01;
-        TPWrite("valvula activada: recogiendo ficha");
+        
+        num_fichas_1 := num_fichas_1-1;
+        RESET DO_01;
         
         WaitTime(3);
         
@@ -158,20 +199,30 @@ MODULE Module1
         MoveL ficha_approach_11,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
     ENDPROC
-    PROC HomeP()
-        MoveAbsJ HOME,v200,z10,chupa\WObj:=Estante;
-    ENDPROC
-
+    
+    
     PROC get_ficha_2()
         MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_21,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_20,v200,z100,chupa\WObj:=Estante;
-
-        MoveL ficha_20,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_21,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_22,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_23,v200,z100,chupa\WObj:=Estante;
-
+        
+        SET DO_01;
+        RESET DO_02;
+        TPWrite("valvula activada: recogiendo ficha 2");
+        IF num_fichas_2 = 3 THEN
+            MoveL ficha_23,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_2 = 2 THEN
+            MoveL ficha_22,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_2 = 1 THEN
+            MoveL ficha_21,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_2 <= 0 THEN 
+            TPWrite("no hay fichas 2 por favor llenar stock");
+        ENDIF
+        num_fichas_2 := num_fichas_2-1;
+        RESET DO_01;
+        
+        WaitTime(3);
+        
         MoveL ficha_approach_20,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_21,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
@@ -182,11 +233,22 @@ MODULE Module1
         MoveL ficha_approach_31,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_30,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_30,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_31,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_32,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_33,v200,z100,chupa\WObj:=Estante;
+        SET DO_01;
+        RESET DO_02;        
+        TPWrite("valvula activada: recogiendo ficha 3");
+        IF num_fichas_3 = 3 THEN
+            MoveL ficha_33,v50,z100,chupa\WObj:=Estante;  
+        ELSEIF num_fichas_3 = 2 THEN
+            MoveL ficha_32,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_3 = 1 THEN
+            MoveL ficha_31,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_3 <= 0 THEN 
+            TPWrite("no hay fichas 2 por favor llenar stock");
+        ENDIF
+        num_fichas_3 := num_fichas_3-1;
+        RESET DO_01;
         
+        WaitTime(3);
         MoveL ficha_approach_30,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_31,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
@@ -197,10 +259,21 @@ MODULE Module1
         MoveL ficha_approach_41,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_40,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_40,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_41,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_42,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_43,v200,z100,chupa\WObj:=Estante;
+        SET DO_01;
+        RESET DO_02;
+        TPWrite("valvula activada: recogiendo ficha 1");
+        IF num_fichas_4 = 3 THEN
+            MoveL ficha_43,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_4 = 2 THEN
+            MoveL ficha_42,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_4 = 1 THEN
+            MoveL ficha_41,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_4 <= 0 THEN 
+            TPWrite("no hay fichas 4 por favor llenar stock");
+        ENDIF
+        num_fichas_4 := num_fichas_4-1;
+        RESET DO_01;
+        WaitTime(3);
         
         MoveL ficha_approach_40,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_41,v200,z100,chupa\WObj:=Estante;
@@ -212,11 +285,22 @@ MODULE Module1
         MoveL ficha_approach_51,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_50,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_50,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_51,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_52,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_53,v200,z100,chupa\WObj:=Estante;
+        SET DO_01;
+        RESET DO_02;
+        TPWrite("valvula activada: recogiendo ficha 5");
+        IF num_fichas_5 = 3 THEN
+            MoveL ficha_53,v50,z100,chupa\WObj:=Estante;      
+        ELSEIF num_fichas_5 = 2 THEN
+            MoveL ficha_52,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_5 = 1 THEN
+            MoveL ficha_51,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_5 <= 0 THEN 
+            TPWrite("no hay fichas 5 por favor llenar stock");
+        ENDIF 
+        num_fichas_5 := num_fichas_5-1;
+        RESET DO_01;
         
+        WaitTime(3);
         MoveL ficha_approach_50,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_51,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
@@ -227,40 +311,26 @@ MODULE Module1
         MoveL ficha_approach_61,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_60,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_60,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_61,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_62,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_63,v200,z100,chupa\WObj:=Estante;
+        SET DO_01;           
+        RESET DO_02;
+        TPWrite("valvula activada: recogiendo ficha 6");
+        IF num_fichas_6 = 3 THEN
+            MoveL ficha_63,v50,z100,chupa\WObj:=Estante; 
+        ELSEIF num_fichas_6 = 2 THEN
+            MoveL ficha_62,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_6 = 1 THEN
+            MoveL ficha_61,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_6 <= 0 THEN 
+            TPWrite("no hay fichas 6 por favor llenar stock");
+        ENDIF
+        
+        num_fichas_6 := num_fichas_6-1;
+        RESET DO_01;
+        WaitTime(3);
         
         MoveL ficha_approach_60,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_61,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
     ENDPROC
-    
- 
-    PROC get_valde()
-        MoveL get_valde_A_10,v200,z100,gancho\WObj:=Banda_Tr;
-        MoveL get_valde_A_20,v200,z100,gancho\WObj:=Banda_Tr;
-        MoveL get_valde_A_30,v50,z100,gancho\WObj:=Banda_Tr;
-        WaitTime(2);
-        MoveL get_valde_A_40,v200,z100,gancho\WObj:=Banda_Tr;
-        WaitTime(2);
-        MoveL get_valde_B_10,v200,z100,gancho\WObj:=valde_en_suelo;
-        WaitTime(2);
-        MoveL get_valde_B_20,v50,z100,gancho\WObj:=valde_en_suelo;
-        MoveL get_valde_B_30,v200,z100,gancho\WObj:=valde_en_suelo;
-    ENDPROC
- 
-    PROC put_valde()
-        MoveL put_valde_10,v200,z100,chupa\WObj:=valde_en_suelo;
-        MoveL put_valde_20,v50,z100,chupa\WObj:=valde_en_suelo;
-        WaitTime(2);
-        RESET DO_01;
-        TPWrite("valvula desactivada: dejando ficha");        
-    ENDPROC
-    PROC fichas1()
-
-    ENDPROC
-       
    
 ENDMODULE
