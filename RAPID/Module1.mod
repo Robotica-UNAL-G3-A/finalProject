@@ -14,7 +14,7 @@ MODULE Module1
     ! slow speed v50
     
     ! Variable Declarations
-    VAR num num_fichas_1 := 0;
+    VAR num num_fichas_1 := 3;
     VAR num num_fichas_2 := 3;
     VAR num num_fichas_3 := 3;
     VAR num num_fichas_4 := 3;
@@ -108,11 +108,15 @@ MODULE Module1
     CONST robtarget put_valde_40:=[[1.651159255,-21.784821076,180.000028319],[0.349392751,-0.30920971,0.586176929,0.662352375],[-1,1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     ! calib
-    CONST robtarget Estante_calib_10:=[[200.000036469,100.000009659,493.155982599],[0.00000008,-0.000000002,1,-0.000000234],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget Estante_calib_20:=[[7.106937599,100.000017468,493.155973911],[0.000000106,-0.000000009,1,-0.000000277],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget Estante_calib_30:=[[0.00002097,0.000013468,492.986708574],[0.000000093,0.000000005,1,-0.000000388],[-1,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget esquinaSuperior:=[[0,0,428],[1,0,0,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Estante_calib_10:=[[200.000036469,100.000009659,490],[0.00000008,-0.000000002,1,-0.000000234],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Estante_calib_20:=[[7.106937599,100.000017468,490],[0.000000106,-0.000000009,1,-0.000000277],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Estante_calib_30:=[[0,0,490],[0.000000093,0.000000005,1,-0.000000388],[-1,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Estante_calib_40:=[[0,0,478],[0.000000093,0.000000005,1,-0.000000388],[-1,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    
     CONST robtarget Banda_calib_10:=[[174.447511267,6.684315413,358.069596443],[0.495128462,-0.525234807,-0.617234084,-0.313046783],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget Valde_calib_10:=[[0.000516798,0.000009409,556.103474051],[0.363514005,-0.700008618,-0.408457344,-0.459356182],[-1,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    
     
     
     
@@ -121,10 +125,11 @@ MODULE Module1
         Reset DO_01;  
         ! neumatic valve  deactivate
         RESET DO_02;
-        
         HomeP;
         calib;
         
+        
+        HomeP;
 !        FOR k FROM 1 TO 3 DO
 !            TPReadNum   user_option, "Select ficha"; 
 !            choose_fichas{k}:= user_option;
@@ -142,6 +147,7 @@ MODULE Module1
             get_ficha;          
         ENDFOR
         
+        return_valde;
         HomeP;
         
     ENDPROC
@@ -189,6 +195,30 @@ MODULE Module1
         
     ENDPROC
  
+PROC return_valde()
+        
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        WaitTime(2);
+    
+        ! get from floor
+        MoveL get_valde_B_60,v200,z100,gancho\WObj:=valde_en_suelo;
+        MoveL get_valde_B_50,v50,z100,gancho\WObj:=valde_en_suelo;
+        MoveL get_valde_B_40,v50,z100,gancho\WObj:=valde_en_suelo;
+        MoveL get_valde_B_30,v50,z100,gancho\WObj:=valde_en_suelo;
+        WaitTime(2);
+        MoveL get_valde_B_20,v100,z100,gancho\WObj:=valde_en_suelo;
+        WaitTime 2;
+        MoveL get_valde_B_10,v100,z100,gancho\WObj:=valde_en_suelo; 
+        
+        ! return to banda
+        MoveL get_valde_A_30,v50,z100,gancho\WObj:=Banda_Tr;
+        MoveL get_valde_A_20,v200,z100,gancho\WObj:=Banda_Tr;
+        MoveL get_valde_A_10,v200,z100,gancho\WObj:=Banda_Tr;
+        
+        
+        
+    ENDPROC
+     
     PROC put_valde()    ! put pieza in valde       
         MoveL put_valde_10,v200,z100,chupa\WObj:=valde_en_suelo;
         WaitTime(1);
@@ -374,8 +404,15 @@ MODULE Module1
     
     PROC Estante_calib()
         MoveL Estante_calib_10,v50,z100,chupa\WObj:=Estante;
-        MoveL Estante_calib_20,v50,z100,chupa\WObj:=Estante;
+        MoveL Estante_calib_20,v50,z100,chupa\WObj:=Estante;  
         MoveL Estante_calib_30,v50,z100,chupa\WObj:=Estante;
+        MoveL Estante_calib_40,v50,z100,chupa\WObj:=Estante;
+    
+        WaitTime 5;
+        MoveL Estante_calib_30,v50,z100,chupa\WObj:=Estante;
+        MoveL Estante_calib_20,v50,z100,chupa\WObj:=Estante;  
+        MoveL Estante_calib_10,v50,z100,chupa\WObj:=Estante;
+    
     ENDPROC
     
     PROC Banda_calib()
@@ -384,15 +421,22 @@ MODULE Module1
     
     PROC Valde_calib()
         MoveL Valde_calib_10,v50,z100,gancho\WObj:=valde_en_suelo;
+        WaitTime 5;
     ENDPROC
     
     PROC calib()
         Valde_calib;
-        WaitTime(5);
+        
         Banda_calib;
-        WaitTime(5);
+        
+        WaitTime 5;
         Estante_calib;
-        WaitTime(5);
+        WaitTime 5;
     ENDPROC
+
+    PROC Path_40()
+        MoveL esquinaSuperior,v1000,z100,gancho\WObj:=Estante;
+    ENDPROC
+   
     
 ENDMODULE
