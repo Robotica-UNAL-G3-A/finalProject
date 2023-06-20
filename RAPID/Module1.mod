@@ -37,12 +37,12 @@ MODULE Module1
     CONST robtarget ficha_approach_gen:=[[200,100,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     ! ficha 1
-    CONST robtarget ficha_approach_10:=[[394.5,-51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_approach_11:=[[394.5,51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_10:=[[394.5,-51.5,288],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_11:=[[394.5,-51.5,291],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_12:=[[394.5,-51.5,294],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_13:=[[394.5,-51.5,297],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_10:=[[394.5,-51.5,320],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_11:=[[394.5,51.5,320],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_10:=[[394.5,-51.5,298],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_11:=[[394.5,-51.5,301],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_12:=[[394.5,-51.5,304],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_13:=[[394.5,-51.5,307],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     ! ficha 2
     CONST robtarget ficha_approach_20:=[[134.5,-51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -53,12 +53,12 @@ MODULE Module1
     CONST robtarget ficha_23:=[[134.5,-51.5,297],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     ! ficha 3
-    CONST robtarget ficha_approach_30:=[[394.5,-51.5,170],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_approach_31:=[[394.5,51.5,170],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_30:=[[394.5,-51.5,150],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_31:=[[394.5,-51.5,153],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_32:=[[394.5,-51.5,156],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_33:=[[394.5,-51.5,159],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_30:=[[394.5,-51.5,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_31:=[[394.5,51.5,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_30:=[[394.5,-51.5,160],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_31:=[[394.5,-51.5,163],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_32:=[[394.5,-51.5,166],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_33:=[[394.5,-51.5,169],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     ! ficha 4
 	CONST robtarget ficha_approach_40:=[[134.5,-51.5,170],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -69,12 +69,12 @@ MODULE Module1
     CONST robtarget ficha_43:=[[134.5,-51.5,159],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     ! ficha 5
-	CONST robtarget ficha_approach_50:=[[394.5,-51.5,30],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_approach_51:=[[394.5,51.5,30],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-	CONST robtarget ficha_50:=[[394.5,-51.5,12],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_51:=[[394.5,-51.5,15],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_52:=[[394.5,-51.5,18],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_53:=[[394.5,-51.5,21],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget ficha_approach_50:=[[394.5,-51.5,40],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_51:=[[394.5,51.5,40],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget ficha_50:=[[394.5,-51.5,22],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_51:=[[394.5,-51.5,25],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_52:=[[394.5,-51.5,28],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_53:=[[394.5,-51.5,31],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
    
 	! ficha 6
 	CONST robtarget ficha_approach_60:=[[140.229,-51.5,40],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -115,18 +115,24 @@ MODULE Module1
     CONST robtarget Estante_calib_40:=[[0,0,478],[0.000000093,0.000000005,1,-0.000000388],[-1,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     CONST robtarget Banda_calib_10:=[[174.447511267,6.684315413,358.069596443],[0.495128462,-0.525234807,-0.617234084,-0.313046783],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget Valde_calib_10:=[[0.000516798,0.000009409,556.103474051],[0.363514005,-0.700008618,-0.408457344,-0.459356182],[-1,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Banda_calib_20:=[[174.447511267,6.684315413,100],[0.495128462,-0.525234807,-0.617234084,-0.313046783],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    
+    CONST robtarget Valde_calib_10:=[[0,0,556],[0.363514005,-0.700008618,-0.408457344,-0.459356182],[-1,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Valde_calib_20:=[[0,0,100],[0.363514005,-0.700008618,-0.408457344,-0.459356182],[-1,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     
     
     
     PROC main()
         ! neumatic valve  activate
-        Reset DO_01;  
+        Reset DO_02;  
         ! neumatic valve  deactivate
-        RESET DO_02;
-        HomeP;
-        calib;
+        RESET DO_01;
+        ! boton de rutina
+        RESET DO_03;
+        
+        !HomeP;
+        !calib;
         
         
         HomeP;
@@ -139,6 +145,7 @@ MODULE Module1
         FOR k FROM 1 TO 3 DO
             choose_fichas{k}:=ROUTINES{user_option,k}; 
         ENDFOR    
+        Set DO_03;
         
         get_valde;
                
@@ -149,6 +156,8 @@ MODULE Module1
         
         return_valde;
         HomeP;
+        RESET DO_03;
+        
         
     ENDPROC
     
@@ -228,12 +237,12 @@ PROC return_valde()
         WaitTime(2);
         
         ! deactivate valve
-        RESET DO_01;
-        SET DO_02;
+        RESET DO_02;
+        SET DO_01;
         TPWrite("valvula desactivada: dejando ficha"); 
         
         WaitTime(1);
-        RESET DO_02;       
+        RESET DO_01;       
         
     ENDPROC
     
@@ -242,8 +251,8 @@ PROC return_valde()
         MoveL ficha_approach_11,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_10,v200,z100,chupa\WObj:=Estante;
         
-        SET DO_01;
-        RESET DO_02;        
+        SET DO_02;
+        RESET DO_01;        
         TPWrite("valvula activada: recogiendo ficha 1");
         
         IF num_fichas_1 = 3 THEN
@@ -257,7 +266,7 @@ PROC return_valde()
         ENDIF
         
         num_fichas_1 := num_fichas_1-1;
-        RESET DO_01;
+        RESET DO_02;
         
         WaitTime(3);
         
@@ -272,8 +281,8 @@ PROC return_valde()
         MoveL ficha_approach_21,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_20,v200,z100,chupa\WObj:=Estante;
         
-        SET DO_01;
-        RESET DO_02;
+        SET DO_02;
+        RESET DO_01;
         TPWrite("valvula activada: recogiendo ficha 2");
         IF num_fichas_2 = 3 THEN
             MoveL ficha_23,v50,z100,chupa\WObj:=Estante;
@@ -285,7 +294,7 @@ PROC return_valde()
             TPWrite("no hay fichas 2 por favor llenar stock");
         ENDIF
         num_fichas_2 := num_fichas_2-1;
-        RESET DO_01;
+        RESET DO_02;
         
         WaitTime(3);
         
@@ -299,8 +308,8 @@ PROC return_valde()
         MoveL ficha_approach_31,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_30,v200,z100,chupa\WObj:=Estante;
         
-        SET DO_01;
-        RESET DO_02;        
+        SET DO_02;
+        RESET DO_01;        
         TPWrite("valvula activada: recogiendo ficha 3");
         IF num_fichas_3 = 3 THEN
             MoveL ficha_33,v50,z100,chupa\WObj:=Estante;  
@@ -312,7 +321,7 @@ PROC return_valde()
             TPWrite("no hay fichas 2 por favor llenar stock");
         ENDIF
         num_fichas_3 := num_fichas_3-1;
-        RESET DO_01;
+        RESET DO_02;
         
         WaitTime(3);
         MoveL ficha_approach_30,v200,z100,chupa\WObj:=Estante;
@@ -325,8 +334,8 @@ PROC return_valde()
         MoveL ficha_approach_41,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_40,v200,z100,chupa\WObj:=Estante;
         
-        SET DO_01;
-        RESET DO_02;
+        SET DO_02;
+        RESET DO_01;
         TPWrite("valvula activada: recogiendo ficha 4");
         IF num_fichas_4 = 3 THEN
             MoveL ficha_43,v50,z100,chupa\WObj:=Estante;
@@ -338,7 +347,7 @@ PROC return_valde()
             TPWrite("no hay fichas 4 por favor llenar stock");
         ENDIF
         num_fichas_4 := num_fichas_4-1;
-        RESET DO_01;
+        RESET DO_02;
         WaitTime(3);
         
         MoveL ficha_approach_40,v200,z100,chupa\WObj:=Estante;
@@ -351,8 +360,8 @@ PROC return_valde()
         MoveL ficha_approach_51,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_50,v200,z100,chupa\WObj:=Estante;
         
-        SET DO_01;
-        RESET DO_02;
+        SET DO_02;
+        RESET DO_01;
         TPWrite("valvula activada: recogiendo ficha 5");
         IF num_fichas_5 = 3 THEN
             MoveL ficha_53,v50,z100,chupa\WObj:=Estante;      
@@ -364,7 +373,7 @@ PROC return_valde()
             TPWrite("no hay fichas 5 por favor llenar stock");
         ENDIF 
         num_fichas_5 := num_fichas_5-1;
-        RESET DO_01;
+        RESET DO_02;
         
         WaitTime(3);
         MoveL ficha_approach_50,v200,z100,chupa\WObj:=Estante;
@@ -377,8 +386,8 @@ PROC return_valde()
         MoveL ficha_approach_61,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_60,v200,z100,chupa\WObj:=Estante;
         
-        SET DO_01;           
-        RESET DO_02;
+        SET DO_02;           
+        RESET DO_01;
         TPWrite("valvula activada: recogiendo ficha 6");
         IF num_fichas_6 = 3 THEN
             MoveL ficha_63,v50,z100,chupa\WObj:=Estante; 
@@ -391,7 +400,7 @@ PROC return_valde()
         ENDIF
         
         num_fichas_6 := num_fichas_6-1;
-        RESET DO_01;
+        RESET DO_02;
         WaitTime(3);
         
         MoveL ficha_approach_60,v200,z100,chupa\WObj:=Estante;
@@ -403,7 +412,7 @@ PROC return_valde()
     ENDPROC
     
     PROC Estante_calib()
-        MoveL Estante_calib_10,v50,z100,chupa\WObj:=Estante;
+        MoveL Estante_calib_10,v200,z100,chupa\WObj:=Estante;
         MoveL Estante_calib_20,v50,z100,chupa\WObj:=Estante;  
         MoveL Estante_calib_30,v50,z100,chupa\WObj:=Estante;
         MoveL Estante_calib_40,v50,z100,chupa\WObj:=Estante;
@@ -412,16 +421,24 @@ PROC return_valde()
         MoveL Estante_calib_30,v50,z100,chupa\WObj:=Estante;
         MoveL Estante_calib_20,v50,z100,chupa\WObj:=Estante;  
         MoveL Estante_calib_10,v50,z100,chupa\WObj:=Estante;
+        WaitTime 3;
     
     ENDPROC
     
     PROC Banda_calib()
-        MoveL Banda_calib_10,v50,z100,gancho\WObj:=Banda_Tr;
+        MoveL Banda_calib_10,v200,z100,gancho\WObj:=Banda_Tr;
+        WaitTime 5;
+        MoveL Banda_calib_20,v50,z100,gancho\WObj:=Banda_Tr;
+        
+        WaitTime 3;
+       
+        
     ENDPROC
     
     PROC Valde_calib()
-        MoveL Valde_calib_10,v50,z100,gancho\WObj:=valde_en_suelo;
-        WaitTime 5;
+        MoveL Valde_calib_10,v200,z100,gancho\WObj:=valde_en_suelo;
+        MoveL Valde_calib_20,v50,z100,gancho\WObj:=valde_en_suelo;
+        WaitTime 3;
     ENDPROC
     
     PROC calib()
@@ -429,9 +446,8 @@ PROC return_valde()
         
         Banda_calib;
         
-        WaitTime 5;
         Estante_calib;
-        WaitTime 5;
+        
     ENDPROC
 
     PROC Path_40()
