@@ -5,26 +5,55 @@ MODULE Module1
 
    
     CONST robtarget ficha_approach_gen:=[[200,100,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    
+    ! ficha 1
+    CONST robtarget ficha_approach_10:=[[394.5,-51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_11:=[[394.5,51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_10:=[[394.5,-51.5,288],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_11:=[[394.5,-51.5,291],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_12:=[[394.5,-51.5,294],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_13:=[[394.5,-51.5,297],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_approach_10:=[[394.5,-51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_approach_11:=[[394.5,51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    
+    ! ficha 2
+    CONST robtarget ficha_approach_20:=[[134.5,-51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_21:=[[134.5,51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_20:=[[134.5,-51.5,288],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_21:=[[134.5,-51.5,291],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_22:=[[134.5,-51.5,294],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_23:=[[134.5,-51.5,297],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_approach_20:=[[134.5,-51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_approach_21:=[[134.5,51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    
+    ! ficha 3
+    CONST robtarget ficha_approach_30:=[[394.5,-51.5,170],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_31:=[[394.5,51.5,170],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_30:=[[394.5,-51.5,150],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_31:=[[394.5,-51.5,153],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_32:=[[394.5,-51.5,156],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_33:=[[394.5,-51.5,159],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_approach_30:=[[394.5,-51.5,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_approach_31:=[[394.5,51.5,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-	
     
+    ! ficha 4
+	CONST robtarget ficha_approach_40:=[[134.5,-51.5,170],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_41:=[[134.5,51.5,170],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget ficha_40:=[[134.5,-51.5,150],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_41:=[[134.5,-51.5,153],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_42:=[[134.5,-51.5,156],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_43:=[[134.5,-51.5,159],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    
+    ! ficha 5
+	CONST robtarget ficha_approach_50:=[[394.5,-51.5,30],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_51:=[[394.5,51.5,30],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget ficha_50:=[[394.5,-51.5,12],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_51:=[[394.5,-51.5,15],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_52:=[[394.5,-51.5,18],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_53:=[[394.5,-51.5,21],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+   
+	! ficha 6
+	CONST robtarget ficha_approach_60:=[[140.229,-51.5,40],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_61:=[[140.229,51.5,40],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget ficha_60:=[[140.229,-51.5,12],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_61:=[[140.229,-51.5,15],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_62:=[[140.229,-51.5,18],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_63:=[[140.229,-51.5,21],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    	
     CONST robtarget banda_10:=[[0,-50,140],[0,0.707106781,0.707106781,0],[0,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget banda_20:=[[0,10,140],[0,0.707106781,0.707106781,0],[0,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget banda_30:=[[0,10,160],[0,0.707106781,0.707106781,0],[0,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -48,27 +77,42 @@ MODULE Module1
     PROC main()
         HomeP;
         get_valde;
-        
-        
-        HomeP;
+                
         get_ficha_1;
         put_valde;
+        
         get_ficha_2;
         put_valde;
-        get_ficha_3;
         
-        !get_ficha_4;
-        !get_ficha_5;
-        !get_ficha_6;
-        !HomeP;
+        get_ficha_3;
+        put_valde;
+        
+        get_ficha_4;
+        put_valde;
+        
+        get_ficha_5;
+        put_valde;
+        
+        get_ficha_6;
+        put_valde;
+        
+        HomeP;
+        
+        
+        !    !HomeP;
         
     ENDPROC
+    
     PROC get_ficha_1()
         MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_11,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_10,v400,z100,chupa\WObj:=Estante;
+        
         MoveL ficha_10,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_11,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_12,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_13,v400,z100,chupa\WObj:=Estante;
+        
         MoveL ficha_approach_10,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_11,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
@@ -76,27 +120,79 @@ MODULE Module1
     PROC HomeP()
         MoveAbsJ HOME,v500,z10,chupa\WObj:=Estante;
     ENDPROC
-    PROC fichas1()
 
-    ENDPROC
     PROC get_ficha_2()
         MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_21,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_20,v400,z100,chupa\WObj:=Estante;
+
         MoveL ficha_20,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_21,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_22,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_23,v400,z100,chupa\WObj:=Estante;
+
         MoveL ficha_approach_20,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_21,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
     ENDPROC
+    
     PROC get_ficha_3()
         MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_31,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_30,v400,z100,chupa\WObj:=Estante;
+        
         MoveL ficha_30,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_31,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_32,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_33,v400,z100,chupa\WObj:=Estante;
+        
         MoveL ficha_approach_30,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_31,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+    ENDPROC
+    
+    PROC get_ficha_4()
+        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_41,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_40,v400,z100,chupa\WObj:=Estante;
+        
+        MoveL ficha_40,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_41,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_42,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_43,v400,z100,chupa\WObj:=Estante;
+        
+        MoveL ficha_approach_40,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_41,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+    ENDPROC
+	
+	 PROC get_ficha_5()
+        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_51,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_50,v400,z100,chupa\WObj:=Estante;
+        
+        MoveL ficha_50,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_51,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_52,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_53,v400,z100,chupa\WObj:=Estante;
+        
+        MoveL ficha_approach_50,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_51,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+    ENDPROC
+	
+	 PROC get_ficha_6()
+        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_61,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_60,v400,z100,chupa\WObj:=Estante;
+        
+        MoveL ficha_60,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_61,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_62,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_63,v400,z100,chupa\WObj:=Estante;
+        
+        MoveL ficha_approach_60,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_61,v400,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
     ENDPROC
     
@@ -113,5 +209,7 @@ MODULE Module1
         MoveL put_valde_10,v400,z100,chupa\WObj:=valde_en_suelo;
         MoveL put_valde_20,v400,z100,chupa\WObj:=valde_en_suelo;
     ENDPROC
+    
+
    
 ENDMODULE
