@@ -1,7 +1,33 @@
 MODULE Module1
+    !*****************************************************
+    !Module Name: 
+    !Version:     0.beta
+    !Description: pick and place routine
+    !Date:        19/6/2023
+    !Author:      Juan Sebastian D jsduenass@unal.edu.co
+    !*****************************************************
+    
+    
+    ! convetion  
+    ! cruze speed v200
+    ! medium speed v100
+    ! slow speed v50
+    
+    ! Variable Declarations
+    VAR num num_fichas_1 := 4;
+    VAR num num_fichas_2 := 3;
+    VAR num num_fichas_3 := 3;
+    VAR num num_fichas_4 := 3;
+    VAR num num_fichas_5 := 3;
+    VAR num num_fichas_6 := 3;
+    
+    VAR string message := "Hello, RobotStudio!";    
+    !VAR wobjdata ficha := 
+    
+    
     CONST jointtarget HOME:=[[0,0,0,0,30,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-     CONST jointtarget banda_approach_old:=[[85,4,43,-97,85,42],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-     CONST jointtarget banda_approach:=[[12,24,26,100,79,218],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST jointtarget banda_approach_old:=[[85,4,43,-97,85,42],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST jointtarget banda_approach:=[[12,24,26,100,79,218],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
 
    
     CONST robtarget ficha_approach_gen:=[[200,100,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -66,8 +92,9 @@ MODULE Module1
     CONST robtarget get_valde_A_30:=[[174.447507596,6.684316442,203.389814206],[0.495128486,-0.525234784,-0.617234073,-0.313046806],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget get_valde_A_40:=[[460.505499897,-391.66497861,203.389814206],[0.363513977,-0.700008659,-0.408457288,-0.45935619],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
-    CONST robtarget get_valde_B_10:=[[0.000470652,-0.000018612,130],[0.363513973,-0.700008597,-0.408457405,-0.459356184],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget get_valde_B_20:=[[0.000472496,-129.959394283,130],[0.363514037,-0.700008559,-0.408457414,-0.459356184],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget get_valde_B_10:=[[0.000470652,-0.000018612,170],[0.363513973,-0.700008597,-0.408457405,-0.459356184],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget get_valde_B_20:=[[0.000470652,-0.000018612,130],[0.363513973,-0.700008597,-0.408457405,-0.459356184],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget get_valde_B_30:=[[0.000472496,-129.959394283,130],[0.363514037,-0.700008559,-0.408457414,-0.459356184],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     CONST robtarget put_valde_10:=[[-83.007905016,-21.784827301,180.00001869],[0.000000016,-0.466568243,0.884485203,-0.000000071],[0,-1,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget put_valde_20:=[[-41.438608698,-21.784702645,133.518907054],[0.243389654,0.44855593,-0.850338437,-0.128388458],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -75,6 +102,10 @@ MODULE Module1
     
     
     PROC main()
+        ! neumatic valve  
+        Reset DO_01;         
+        
+        !Reset DO_03; 
         HomeP;
         get_valde;
                 
@@ -104,112 +135,132 @@ MODULE Module1
     ENDPROC
     
     PROC get_ficha_1()
-        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_11,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_10,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_11,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_10,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_10,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_11,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_12,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_13,v400,z100,chupa\WObj:=Estante;
+        IF num_fichas_1 = 3 THEN
+            MoveL ficha_13,v50,z100,chupa\WObj:=Estante;
+            
+        ELSEIF num_fichas_1 = 2 THEN
+            MoveL ficha_12,v50,z100,chupa\WObj:=Estante;
+        ELSEIF num_fichas_1 = 1 THEN
+            MoveL ficha_11,v50,z100,chupa\WObj:=Estante;
+        ELSE
+            !MoveL ficha_10,v50,z100,chupa\WObj:=Estante;            
+        ENDIF
+        Set DO_01;
+        TPWrite("valvula activada: recogiendo ficha");
         
-        MoveL ficha_approach_10,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_11,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+        WaitTime(3);
+        
+        MoveL ficha_approach_10,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_11,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
     ENDPROC
     PROC HomeP()
-        MoveAbsJ HOME,v500,z10,chupa\WObj:=Estante;
+        MoveAbsJ HOME,v200,z10,chupa\WObj:=Estante;
     ENDPROC
 
     PROC get_ficha_2()
-        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_21,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_20,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_21,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_20,v200,z100,chupa\WObj:=Estante;
 
-        MoveL ficha_20,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_21,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_22,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_23,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_20,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_21,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_22,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_23,v200,z100,chupa\WObj:=Estante;
 
-        MoveL ficha_approach_20,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_21,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_20,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_21,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
     ENDPROC
     
     PROC get_ficha_3()
-        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_31,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_30,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_31,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_30,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_30,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_31,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_32,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_33,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_30,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_31,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_32,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_33,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_approach_30,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_31,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_30,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_31,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
     ENDPROC
     
     PROC get_ficha_4()
-        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_41,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_40,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_41,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_40,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_40,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_41,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_42,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_43,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_40,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_41,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_42,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_43,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_approach_40,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_41,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_40,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_41,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
     ENDPROC
 	
 	 PROC get_ficha_5()
-        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_51,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_50,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_51,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_50,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_50,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_51,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_52,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_53,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_50,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_51,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_52,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_53,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_approach_50,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_51,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_50,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_51,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
     ENDPROC
 	
 	 PROC get_ficha_6()
-        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_61,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_60,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_61,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_60,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_60,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_61,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_62,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_63,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_60,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_61,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_62,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_63,v200,z100,chupa\WObj:=Estante;
         
-        MoveL ficha_approach_60,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_61,v400,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_gen,v400,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_60,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_61,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
     ENDPROC
     
  
     PROC get_valde()
-        MoveL get_valde_A_10,v400,z100,gancho\WObj:=Banda_Tr;
-        MoveL get_valde_A_20,v400,z100,gancho\WObj:=Banda_Tr;
-        MoveL get_valde_A_30,v400,z100,gancho\WObj:=Banda_Tr;
-        MoveL get_valde_A_40,v400,z100,gancho\WObj:=Banda_Tr;
-        MoveL get_valde_B_10,v400,z100,gancho\WObj:=valde_en_suelo;
-        MoveL get_valde_B_20,v400,z100,gancho\WObj:=valde_en_suelo;
+        MoveL get_valde_A_10,v200,z100,gancho\WObj:=Banda_Tr;
+        MoveL get_valde_A_20,v200,z100,gancho\WObj:=Banda_Tr;
+        MoveL get_valde_A_30,v50,z100,gancho\WObj:=Banda_Tr;
+        WaitTime(2);
+        MoveL get_valde_A_40,v200,z100,gancho\WObj:=Banda_Tr;
+        WaitTime(2);
+        MoveL get_valde_B_10,v200,z100,gancho\WObj:=valde_en_suelo;
+        WaitTime(2);
+        MoveL get_valde_B_20,v50,z100,gancho\WObj:=valde_en_suelo;
+        MoveL get_valde_B_30,v200,z100,gancho\WObj:=valde_en_suelo;
     ENDPROC
+ 
     PROC put_valde()
-        MoveL put_valde_10,v400,z100,chupa\WObj:=valde_en_suelo;
-        MoveL put_valde_20,v400,z100,chupa\WObj:=valde_en_suelo;
+        MoveL put_valde_10,v200,z100,chupa\WObj:=valde_en_suelo;
+        MoveL put_valde_20,v50,z100,chupa\WObj:=valde_en_suelo;
+        WaitTime(2);
+        RESET DO_01;
+        TPWrite("valvula desactivada: dejando ficha");        
     ENDPROC
-    
+    PROC fichas1()
 
+    ENDPROC
+       
    
 ENDMODULE
