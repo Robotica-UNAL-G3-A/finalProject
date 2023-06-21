@@ -23,7 +23,10 @@ MODULE Module1
     VAR num selected_ficha := 1;
     VAR num choose_fichas{3}:=[3,3,3];  
     VAR num user_option := 0;
-    VAR num ROUTINES{4,3}:=[[3,3,3],[1,2,4],[6,4,5],[2,6,1]];    
+    ! routines easy
+    VAR num ROUTINES{4,3}:=[[2,4,2],[4,5,1],[1,3,5],[2,6,1]];    
+    ! routines hard
+    !VAR num ROUTINES{4,3}:=[[3,3,3],[1,2,4],[6,4,5],[2,6,1]];    
    
     
     VAR string message := "Hello, RobotStudio!";    
@@ -34,7 +37,8 @@ MODULE Module1
     CONST jointtarget banda_approach:=[[12,24,26,100,79,218],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
 
    
-    CONST robtarget ficha_approach_gen:=[[200,100,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_gen_10:=[[200,100,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_gen_20:=[[200,200,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     ! ficha 1
     CONST robtarget ficha_approach_10:=[[394.5,-51.5,320],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -112,9 +116,9 @@ MODULE Module1
     CONST robtarget Estante_calib_10:=[[200.000036469,100.000009659,490],[0.00000008,-0.000000002,1,-0.000000234],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget Estante_calib_20:=[[7.106937599,100.000017468,490],[0.000000106,-0.000000009,1,-0.000000277],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget Estante_calib_30:=[[0,0,490],[0.000000093,0.000000005,1,-0.000000388],[-1,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget Estante_calib_40:=[[0,0,478],[0.000000093,0.000000005,1,-0.000000388],[-1,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Estante_calib_40:=[[0,0,528],[0.000000093,0.000000005,1,-0.000000388],[-1,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
-    CONST robtarget Banda_calib_10:=[[174.447511267,6.684315413,358.069596443],[0.495128462,-0.525234807,-0.617234084,-0.313046783],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Banda_calib_10:=[[174.447511267,6.684315413,300],[0.495128462,-0.525234807,-0.617234084,-0.313046783],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget Banda_calib_20:=[[174.447511267,6.684315413,100],[0.495128462,-0.525234807,-0.617234084,-0.313046783],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     CONST robtarget Valde_calib_10:=[[0,0,556],[0.363514005,-0.700008618,-0.408457344,-0.459356182],[-1,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -131,7 +135,7 @@ MODULE Module1
         ! boton de rutina
         RESET DO_03;
         
-        !HomeP;
+       ! HomeP;
         !calib;
         
         
@@ -141,22 +145,27 @@ MODULE Module1
 !            choose_fichas{k}:= user_option;
 !        ENDFOR
         
-        TPReadNum   user_option, "Select routine"; 
-        FOR k FROM 1 TO 3 DO
-            choose_fichas{k}:=ROUTINES{user_option,k}; 
-        ENDFOR    
-        Set DO_03;
         
-        get_valde;
-               
-        FOR k FROM 1 TO 3 DO
-            selected_ficha := choose_fichas{k};    
-            get_ficha;          
+        FOR j FROM 1 TO 4 DO
+            TPReadNum   user_option, "Select routine"; 
+            FOR k FROM 1 TO 3 DO
+                choose_fichas{k}:=ROUTINES{user_option,k}; 
+            ENDFOR    
+            Set DO_03;
+            
+            get_valde;
+                   
+            FOR k FROM 1 TO 3 DO
+                selected_ficha := choose_fichas{k};    
+                get_ficha;          
+            ENDFOR
+            
+            return_valde;
+            HomeP;
+            RESET DO_03;
+            
         ENDFOR
         
-        return_valde;
-        HomeP;
-        RESET DO_03;
         
         
     ENDPROC
@@ -183,7 +192,9 @@ MODULE Module1
         ENDIF
                 put_valde;  
     ENDPROC
+    
     PROC get_valde()
+        TPWrite("Recogiendo valde");
         ! get from banda
         MoveL get_valde_A_10,v200,z100,gancho\WObj:=Banda_Tr;
         MoveL get_valde_A_20,v200,z100,gancho\WObj:=Banda_Tr;
@@ -205,8 +216,8 @@ MODULE Module1
     ENDPROC
  
 PROC return_valde()
-        
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        TPWrite("Dejando valde");
+        MoveL ficha_approach_gen_20,v200,z100,chupa\WObj:=Estante;
         WaitTime(2);
     
         ! get from floor
@@ -216,8 +227,8 @@ PROC return_valde()
         MoveL get_valde_B_30,v50,z100,gancho\WObj:=valde_en_suelo;
         WaitTime(2);
         MoveL get_valde_B_20,v100,z100,gancho\WObj:=valde_en_suelo;
+        MoveL get_valde_B_10,v100,z100,gancho\WObj:=valde_en_suelo;
         WaitTime 2;
-        MoveL get_valde_B_10,v100,z100,gancho\WObj:=valde_en_suelo; 
         
         ! return to banda
         MoveL get_valde_A_30,v50,z100,gancho\WObj:=Banda_Tr;
@@ -247,7 +258,7 @@ PROC return_valde()
     ENDPROC
     
     PROC get_ficha_1()
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen_10,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_11,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_10,v200,z100,chupa\WObj:=Estante;
         
@@ -272,12 +283,12 @@ PROC return_valde()
         
         MoveL ficha_approach_10,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_11,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen_10,v200,z100,chupa\WObj:=Estante;
     ENDPROC
     
     
     PROC get_ficha_2()
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen_10,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_21,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_20,v200,z100,chupa\WObj:=Estante;
         
@@ -300,11 +311,11 @@ PROC return_valde()
         
         MoveL ficha_approach_20,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_21,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen_10,v200,z100,chupa\WObj:=Estante;
     ENDPROC
     
     PROC get_ficha_3()
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen_10,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_31,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_30,v200,z100,chupa\WObj:=Estante;
         
@@ -326,11 +337,11 @@ PROC return_valde()
         WaitTime(3);
         MoveL ficha_approach_30,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_31,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen_10,v200,z100,chupa\WObj:=Estante;
     ENDPROC
     
     PROC get_ficha_4()
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen_10,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_41,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_40,v200,z100,chupa\WObj:=Estante;
         
@@ -352,11 +363,11 @@ PROC return_valde()
         
         MoveL ficha_approach_40,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_41,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen_10,v200,z100,chupa\WObj:=Estante;
     ENDPROC
 	
 	 PROC get_ficha_5()
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen_10,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_51,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_50,v200,z100,chupa\WObj:=Estante;
         
@@ -378,11 +389,11 @@ PROC return_valde()
         WaitTime(3);
         MoveL ficha_approach_50,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_51,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen_10,v200,z100,chupa\WObj:=Estante;
     ENDPROC
 	
 	 PROC get_ficha_6()
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen_10,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_61,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_60,v200,z100,chupa\WObj:=Estante;
         
@@ -405,7 +416,7 @@ PROC return_valde()
         
         MoveL ficha_approach_60,v200,z100,chupa\WObj:=Estante;
         MoveL ficha_approach_61,v200,z100,chupa\WObj:=Estante;
-        MoveL ficha_approach_gen,v200,z100,chupa\WObj:=Estante;
+        MoveL ficha_approach_gen_10,v200,z100,chupa\WObj:=Estante;
     ENDPROC
     PROC fichas1()
 
@@ -437,6 +448,7 @@ PROC return_valde()
     
     PROC Valde_calib()
         MoveL Valde_calib_10,v200,z100,gancho\WObj:=valde_en_suelo;
+        WaitTime 3;
         MoveL Valde_calib_20,v50,z100,gancho\WObj:=valde_en_suelo;
         WaitTime 3;
     ENDPROC
