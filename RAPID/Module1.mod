@@ -43,10 +43,10 @@ MODULE Module1
     ! ficha 1
     CONST robtarget ficha_approach_10:=[[394.5,-51.5,320],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_approach_11:=[[394.5,51.5,320],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_10:=[[394.5,-51.5,298],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_11:=[[394.5,-51.5,301],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_12:=[[394.5,-51.5,304],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_13:=[[394.5,-51.5,307],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_10:=[[394.5,-51.5,300],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_11:=[[394.5,-51.5,303],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_12:=[[394.5,-51.5,306],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_13:=[[394.5,-51.5,309],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     ! ficha 2
     CONST robtarget ficha_approach_20:=[[134.5,-51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -59,10 +59,10 @@ MODULE Module1
     ! ficha 3
     CONST robtarget ficha_approach_30:=[[394.5,-51.5,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_approach_31:=[[394.5,51.5,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_30:=[[394.5,-51.5,160],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_31:=[[394.5,-51.5,163],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_32:=[[394.5,-51.5,166],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_33:=[[394.5,-51.5,169],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_30:=[[394.5,-51.5,163],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_31:=[[394.5,-51.5,166],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_32:=[[394.5,-51.5,169],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_33:=[[394.5,-51.5,172],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     ! ficha 4
 	CONST robtarget ficha_approach_40:=[[134.5,-51.5,170],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -75,10 +75,10 @@ MODULE Module1
     ! ficha 5
 	CONST robtarget ficha_approach_50:=[[394.5,-51.5,40],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_approach_51:=[[394.5,51.5,40],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-	CONST robtarget ficha_50:=[[394.5,-51.5,22],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_51:=[[394.5,-51.5,25],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_52:=[[394.5,-51.5,28],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_53:=[[394.5,-51.5,31],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget ficha_50:=[[394.5,-51.5,24],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_51:=[[394.5,-51.5,27],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_52:=[[394.5,-51.5,30],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_53:=[[394.5,-51.5,33],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
    
 	! ficha 6
 	CONST robtarget ficha_approach_60:=[[140.229,-51.5,40],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -204,7 +204,7 @@ MODULE Module1
 
         ! put in floor
         MoveL get_valde_B_10,v100,z100,gancho\WObj:=valde_en_suelo; 
-        WaitTime 2;
+        WaitTime(2);
         MoveL get_valde_B_20,v100,z100,gancho\WObj:=valde_en_suelo;
         WaitTime(2);
         MoveL get_valde_B_30,v50,z100,gancho\WObj:=valde_en_suelo;
@@ -245,7 +245,7 @@ PROC return_valde()
     
         MoveL put_valde_30,v10,z100,chupa\WObj:=valde_en_suelo;
         MoveL put_valde_40,v100,z100,chupa\WObj:=valde_en_suelo;
-        WaitTime(2);
+        WaitTime(1);
         
         ! deactivate valve
         RESET DO_02;
