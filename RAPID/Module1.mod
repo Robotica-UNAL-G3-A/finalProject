@@ -57,8 +57,8 @@ MODULE Module1
     CONST robtarget ficha_23:=[[134.5,-51.5,297],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     ! ficha 3
-    CONST robtarget ficha_approach_30:=[[394.5,-51.5,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget ficha_approach_31:=[[394.5,51.5,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_30:=[[394.5,-51.5,190],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget ficha_approach_31:=[[394.5,51.5,190],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_30:=[[394.5,-51.5,166],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_31:=[[394.5,-51.5,166],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_32:=[[394.5,-51.5,169],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -109,10 +109,9 @@ MODULE Module1
     
     CONST robtarget put_valde_10:=[[-83.007905016,-21.784827301,180.00001869],[0.000000016,-0.466568243,0.884485203,-0.000000071],[0,-1,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget put_valde_20:=[[-41.438608698,-21.784702645,133.518907054],[0.243389654,0.44855593,-0.850338437,-0.128388458],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget put_valde_30:=[[-49.950395528,-6.8010554,179.999986802],[0.139279026,-0.624181623,0.760211205,-0.114357239],[-1,1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget put_valde_40:=[[-49.950415629,-6.801043195,179.999993368],[0.318454241,-0.57819804,0.704206367,-0.261471441],[-1,1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget put_valde_50:=[[-16.241988758,-16.325367734,127.19652244],[0.538709572,-0.107563262,0.71693793,0.429211074],[-1,1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    
+    CONST robtarget put_valde_30:=[[-83.008017704,-21.784820069,179.999983063],[0.349392753,-0.309209681,0.586176945,0.662352373],[-1,1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget put_valde_40:=[[1.651159255,-21.784821076,180.000028319],[0.349392751,-0.30920971,0.586176929,0.662352375],[-1,1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+ 
     ! calib
     CONST robtarget esquinaSuperior:=[[0,0,428],[1,0,0,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget Estante_calib_10:=[[200.000036469,100.000009659,490],[0.00000008,-0.000000002,1,-0.000000234],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -209,8 +208,6 @@ MODULE Module1
         WaitTime(2);
         MoveL get_valde_B_20,v100,z100,gancho\WObj:=valde_en_suelo;
         WaitTime(2);
-        MoveL get_valde_B_30,v50,z100,gancho\WObj:=valde_en_suelo;
-        MoveL get_valde_B_40,v50,z100,gancho\WObj:=valde_en_suelo;
         
         MoveL get_valde_B_50,v50,z100,gancho\WObj:=valde_en_suelo;
         MoveL get_valde_B_60,v200,z100,gancho\WObj:=valde_en_suelo;
@@ -224,9 +221,7 @@ PROC return_valde()
     
         ! get from floor
         MoveL get_valde_B_60,v200,z100,gancho\WObj:=valde_en_suelo;
-        MoveL get_valde_B_70,v1000,z100,gancho\WObj:=valde_en_suelo;
-        MoveL get_valde_B_40,v50,z100,gancho\WObj:=valde_en_suelo;
-        MoveL get_valde_B_30,v50,z100,gancho\WObj:=valde_en_suelo;
+        MoveL get_valde_B_70,v200,z100,gancho\WObj:=valde_en_suelo;
         WaitTime(2);
         MoveL get_valde_B_20,v100,z100,gancho\WObj:=valde_en_suelo;
         MoveL get_valde_B_10,v100,z100,gancho\WObj:=valde_en_suelo;
@@ -247,7 +242,7 @@ PROC return_valde()
     
         MoveL put_valde_30,v10,z100,chupa\WObj:=valde_en_suelo;
         MoveL put_valde_40,v100,z100,chupa\WObj:=valde_en_suelo;
-        WaitTime (2);
+        WaitTime 1;
         
         ! deactivate valve
         RESET DO_02;
