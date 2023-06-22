@@ -40,7 +40,7 @@ MODULE Module1
     CONST robtarget ficha_approach_gen_10:=[[200,100,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_approach_gen_20:=[[200,200,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
-    ! ficha 1
+    ! targets ficha 1
     CONST robtarget ficha_approach_10:=[[394.5,-51.5,320],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_approach_11:=[[394.5,51.5,320],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_10:=[[394.5,-51.5,303],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -48,7 +48,7 @@ MODULE Module1
     CONST robtarget ficha_12:=[[394.5,-51.5,306],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_13:=[[394.5,-51.5,309],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
-    ! ficha 2
+    ! targets ficha 2
     CONST robtarget ficha_approach_20:=[[134.5,-51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_approach_21:=[[134.5,51.5,310],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_20:=[[134.5,-51.5,288],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -56,7 +56,7 @@ MODULE Module1
     CONST robtarget ficha_22:=[[134.5,-51.5,294],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_23:=[[134.5,-51.5,297],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
-    ! ficha 3
+    ! targets ficha 3
     CONST robtarget ficha_approach_30:=[[394.5,-51.5,190],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_approach_31:=[[394.5,51.5,190],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_30:=[[394.5,-51.5,166],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -64,7 +64,7 @@ MODULE Module1
     CONST robtarget ficha_32:=[[394.5,-51.5,169],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_33:=[[394.5,-51.5,172],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
-    ! ficha 4
+    ! targets ficha 4
 	CONST robtarget ficha_approach_40:=[[134.5,-51.5,170],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_approach_41:=[[134.5,51.5,170],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
 	CONST robtarget ficha_40:=[[134.5,-51.5,150],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -72,7 +72,7 @@ MODULE Module1
     CONST robtarget ficha_42:=[[134.5,-51.5,156],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_43:=[[134.5,-51.5,159],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
-    ! ficha 5
+    ! targets ficha 5
 	CONST robtarget ficha_approach_50:=[[394.5,-51.5,40],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_approach_51:=[[394.5,51.5,40],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
 	CONST robtarget ficha_50:=[[394.5,-51.5,27],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -80,14 +80,15 @@ MODULE Module1
     CONST robtarget ficha_52:=[[394.5,-51.5,33],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_53:=[[394.5,-51.5,36],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
    
-	! ficha 6
+	! targets ficha 6
 	CONST robtarget ficha_approach_60:=[[140.229,-51.5,40],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_approach_61:=[[140.229,51.5,40],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
 	CONST robtarget ficha_60:=[[140.229,-51.5,12],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_61:=[[140.229,-51.5,15],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_62:=[[140.229,-51.5,18],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget ficha_63:=[[140.229,-51.5,21],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    	
+
+    ! targets get valde	
     CONST robtarget banda_10:=[[0,-50,140],[0,0.707106781,0.707106781,0],[0,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget banda_20:=[[0,10,140],[0,0.707106781,0.707106781,0],[0,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget banda_30:=[[0,10,160],[0,0.707106781,0.707106781,0],[0,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -107,12 +108,13 @@ MODULE Module1
     CONST robtarget get_valde_B_60:=[[0.000472496,-129.959394283,145],[0.363514037,-0.700008559,-0.408457414,-0.459356184],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget get_valde_B_70:=[[3.61879477,19.566989036,143.074869241],[0.291565236,-0.752726406,-0.300417952,-0.508076496],[-1,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
+    ! targets put valde
     CONST robtarget put_valde_10:=[[-83.007905016,-21.784827301,180.00001869],[0.000000016,-0.466568243,0.884485203,-0.000000071],[0,-1,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget put_valde_20:=[[-41.438608698,-21.784702645,133.518907054],[0.243389654,0.44855593,-0.850338437,-0.128388458],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget put_valde_30:=[[-83.008017704,-21.784820069,179.999983063],[0.349392753,-0.309209681,0.586176945,0.662352373],[-1,1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget put_valde_40:=[[1.651159255,-21.784821076,180.000028319],[0.349392751,-0.30920971,0.586176929,0.662352375],[-1,1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
  
-    ! calib
+    ! targets calibrate 
     CONST robtarget esquinaSuperior:=[[0,0,428],[1,0,0,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget Estante_calib_10:=[[200.000036469,100.000009659,490],[0.00000008,-0.000000002,1,-0.000000234],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget Estante_calib_20:=[[7.106937599,100.000017468,490],[0.000000106,-0.000000009,1,-0.000000277],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -131,12 +133,14 @@ MODULE Module1
     PROC main()
         ! neumatic valve  activate
         Reset DO_02;  
+       
         ! neumatic valve  deactivate
         RESET DO_01;
-        ! boton de rutina
+
+        ! running routine light
         RESET DO_03;
         
-       ! HomeP;
+        ! HomeP;
         !calib;
         
         
@@ -151,7 +155,9 @@ MODULE Module1
             TPReadNum   user_option, "Select routine"; 
             FOR k FROM 1 TO 3 DO
                 choose_fichas{k}:=ROUTINES{user_option,k}; 
-            ENDFOR    
+            ENDFOR 
+
+            ! turn on routine light
             Set DO_03;
             
             get_valde;
@@ -163,6 +169,8 @@ MODULE Module1
             
             return_valde;
             HomeP;
+            
+            ! turn off routine light
             RESET DO_03;
             
         ENDFOR
@@ -192,7 +200,7 @@ MODULE Module1
         ELSE
             TPWrite("ficha seleccionada no valida");
         ENDIF
-                put_valde;  
+            put_valde;  
     ENDPROC
     
     PROC get_valde()
