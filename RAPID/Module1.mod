@@ -176,6 +176,7 @@ MODULE Module1
     ENDPROC
     
     PROC get_ficha()
+        ! grab piece from shelve
         IF selected_ficha=1 THEN
             get_ficha_1;
         ELSEIF    selected_ficha=2 THEN        
@@ -195,6 +196,7 @@ MODULE Module1
     ENDPROC
     
     PROC get_valde()
+        ! take the container and place it at the point
         TPWrite("Recogiendo valde");
         ! get from banda
         MoveL get_valde_A_10,v200,z100,gancho\WObj:=Banda_Tr;
@@ -215,6 +217,7 @@ MODULE Module1
     ENDPROC
  
 PROC return_valde()
+        ! return container to conveyor belt
         TPWrite("Dejando valde");
         MoveL ficha_approach_gen_20,v200,z100,chupa\WObj:=Estante;
         WaitTime(2);
@@ -236,7 +239,8 @@ PROC return_valde()
         
     ENDPROC
      
-    PROC put_valde()    ! put pieza in valde       
+    PROC put_valde()    
+        ! put piece in valde       
         MoveL put_valde_10,v200,z100,chupa\WObj:=valde_en_suelo;
         WaitTime(1);
     
