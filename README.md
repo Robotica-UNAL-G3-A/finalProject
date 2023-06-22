@@ -30,7 +30,7 @@ Las piezas fueron fabricadas utilizando MDF, se dejo una zona de agarre cuadrada
 
 
 ## Rutina 
-Para el desarrollo en codigo RAPID de se tuvo en cuenta las partes antes mencinada de las que se compone la rutina y se descompuso en procesos indenpendientes importante que cada proceso arrancara y finalizara en punto seguro apartir del cual se pudiera ejecurtar cualquier otro proceso.
+Para el desarrollo en codigo RAPID de se tuvo en cuenta secciones las antes mencinadas de las que se compone la rutina, y se descompuso en procesos indenpendientes, siendo importante que cada proceso arrancara y finalizara en punto seguro apartir del cual se pudiera ejecutar cualquier otro proceso.
 
 ```
 PROC get_valde()
@@ -49,6 +49,14 @@ put_valde()
 ! put piece in valde
 ENDPROC
 ```
+## Definición de workobjects
+Para la realización de trayectorias de movimiento se definio 3 workobjcts correspondintes a la estanteria, al valde ubicado en la banda y al valde ubicado en el punto de alistamiento.
+
+```
+    TASK PERS wobjdata Estante:=[FALSE,TRUE,"",[[200,-400,34],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+    TASK PERS wobjdata Banda_Tr:=[FALSE,TRUE,"",[[250,600,260],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+    TASK PERS wobjdata valde_en_suelo:=[FALSE,TRUE,"",[[739.904,-27.626,32],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+```    
 ### Definición de variables
 El siguiente fragmento de codigo muestra la inizialización de variables utilizadas para la rutina.
 
@@ -66,7 +74,7 @@ El siguiente fragmento de codigo muestra la inizialización de variables utiliza
     VAR num ROUTINES{4,3}:=[[2,4,2],[4,5,1],[1,3,5],[2,6,1]]; 
 ```
 ### Toma de pieza 
-Dentro del proceso `get_ficha()` se implemento la logica para definir que ficha recoger utilizando  la variable `selected_ficha` la cual establecida que proceso se realizaria basado en el un numero de 1 a 6 representando cada una de las posiciones del estante.
+Dentro del proceso `get_ficha()` se implemento la logica para definir que ficha recoger utilizando  la variable `selected_ficha`, la cual establece que proceso se realizara basado en un número de 1 a 6 representando cada una de las posiciones del estante.
 ```
 PROC get_ficha()
     ! grab piece from shelve
@@ -89,7 +97,7 @@ PROC get_ficha()
 ENDPROC
 ```
 
-Dentro de cada uno de estos procesos esta la rutina de movimiento asi como la activación y desactivación de las entradas digitales que accionan las electrovalvulas que controlaran el accionamiento de la ventosa. Igualmente se implementa la logica donde se ajusta la ubicación, especificamente la altura, de la ficha dependiendo de cuantas fichas quedan en la pila.
+Dentro de cada uno de estos procesos `get_ficha_n()` esta la rutina de movimiento asi como la activación y desactivación de las entradas digitales que accionan las electrovalvulas que controlaran el accionamiento de la ventosa. Igualmente se implementa la logica donde se ajusta la ubicación, especificamente la altura, de la ficha dependiendo de cuantas fichas quedan en la pila.
 
 ```
 PROC get_ficha_1()
@@ -123,7 +131,7 @@ ENDPROC
 ```
 
 ### Selección de pieza por usuario
-Al usuario se le da la opción de seleccionar entre 4 rutinas de movimiento a traves del ingreso de un número de 1 a 4 con el cual se seleccionara uno de los arreglos de la variable `ROUTINES{4,3}:=[[2,4,2],[4,5,1],[1,3,5],[2,6,1]];`. Cada uno de estos tiene establecido una combinación de fichas que se pasara a `choose_fichas` para ser tomadas durante la rutina. igualmente se activa la señal digital `O_03`al inicio del proceso y se apaga al finalizar para señalar la ejecución de la rutina. Esta señal digital esta conectada a una luz indicadora que iluminara mientras que se ejecute la rutina.
+Al usuario se le da la opción de seleccionar entre 4 rutinas de movimiento a traves del ingreso de un número de 1 a 4 con el cual se seleccionara uno de los arreglos de la variable `ROUTINES{4,3}:=[[2,4,2],[4,5,1],[1,3,5],[2,6,1]];`. Cada uno de estos tiene establecido una combinación de fichas que se pasara a `choose_fichas` para ser tomadas durante la rutina. igualmente se activa la señal digital `DO_03`al inicio del proceso y se apaga al finalizar para señalar la ejecución de la rutina. Esta señal digital esta conectada a una luz indicadora que iluminara mientras que se ejecute la rutina.
 
 ```
     TPReadNum   user_option, "Select routine"; 
