@@ -165,12 +165,14 @@ Para más detalle el código fuente puede encontrarse en la carpeta [RAPID](./RA
 - El movimiento relativo entre efector final y objeto de trabajo (causado por la falta de una conexión rigida) afecta la repetibilidad. Al existir variación en la posición en la que puede ubicarse el contenedor (valde) enfatiza la necesidad de generar una solución robusta que funcione bajo un margen de incertidumbre elevado respecto a posición del valde.
 - Se debe diseñar la rutina para disminuir la dinamica de movimiento lo más posible sin embargo esto entra en conflicto con el objetivo de intentar reducir lo más posible el tiempo de ejecución. Por tanto es necesario balance de estos dos objetivos en el diseño de la rutina de trabajo.
 - El ambiente de simulación de robotStudio es una excelente herramienta para no realiza alertas como por ejemplo el acercamiento a puntos de singularidad. Notificaciones que de haber aparecido al momento de diseñar la rutina hubiera impulzado a realizar la  busqueda de una trayectoria diferente.
-- La presencia de estas alertas impactaron el desempeño de la puesta en practica de la rutina y esto evidencia la discrepancia entre los tiempos obtenidos durante la simulación y las pruebas con el robot. 
+- La presencia de estas alertas impactaron el desempeño de la puesta en practica de la rutina y esto evidencia la discrepancia entre los tiempos obtenidos durante la simulación y las pruebas con el robot.
+- De cara a evitar singularidades es importante evitar en la mayor medida trayectorias que impliquen desplazamientos lineales que produzcan movimientos considerables en las articulaciones, y para esto se debe hacer una correcta planeación que va desde la disposición y orientación de cada uno de los elementos a ensamblar hasta la misma ubicación de las estaciones de trabajo.
 
 ## Contributors
 - [Juan Sebastian Duenas](https://github.com/jsduenass) (jsduenass@unal.edu.co)
 - [German Andres Urbina Gutierrez](https://github.com/gurbinaUn)  (gurbina@unal.edu.co)
 - [Brayan Daniel Barrera Galvis](https://github.com/brayandan) (bdbarrerag@unal.edu.co)
+- [Paula Sofía Medina Diaz](https://github.com/psmedinadi22) (psmedinadi@unal.edu.co)
 
 ## Referencias
 
