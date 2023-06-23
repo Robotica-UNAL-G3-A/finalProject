@@ -177,6 +177,15 @@ Para más detalle el código fuente puede encontrarse en la carpeta [RAPID](./RA
 ## Referencias
 
 <!---
+
+
 !PERS tooldata chupa_reflected:=[TRUE,[[74.07,62.084,306.409],[0.923879533,0.382683432,0,0]],[1,[0,0,1],[1,0,0,0],0,0,0]];
     !PERS tooldata gancho_reflected:=[TRUE,[[-88.879,9.998,167.25],[0.5,-0.5,-0.5,0.5]],[1,[0,0,1],[1,0,0,0],0,0,0]];
 -->
+
+- Ramírez, R. y Rodríguez, J. (2022). Guías de Robot Studio. Universidad Nacional de Colombia.
+- Cárdenas, P. y Ramírez, R. (2020). Robótica - Proyecto Final. Universidad Nacional de Colombia.
+- Spong, M. Hutchinson, S. y Vidyasagar, M. (2006). Robot modeling and control. John Wiley & Sons, Inc
+- Apuntes de clase, Robótica 2023-1
+
+---
