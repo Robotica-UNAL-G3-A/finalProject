@@ -158,7 +158,9 @@ Al usuario se le da la opción de seleccionar entre 4 rutinas de movimiento a tr
 
 Para más detalle el código fuente puede encontrarse en la carpeta [RAPID](./RAPID/) y una versión pack and go del proyecto de RobotStudio puede encontrarse en el [release](https://github.com/Robotica-UNAL-G3-A/finalProject/releases/tag/v.beta) del repo.
 
-## Video 
+## Resultados
+Para el desarrollo de este proyecto se inició verificando la conexión neumática de la ventosa, seguido fue necesario verificar el voltaje de alimentación de la ventosa e identificar con una fuente de alimentación la conexión que activa y desactiva el sistema. Posterior se carga el programa RAPID en un FlexPendant del robot industrial ABB IRB 140 por medio de una USB y se ejecutan las rutinas como se ve a continuación:
+
 
 ## Conclusiones 
 - El manejo de la herramienta de tipo gancho asi como la manija del valde, dificultan el proceso de diseño de rutina, dado que al no existir una conexión rigida no se pueda determinar la ubicación  del objeto a partir de la posición del efector final. 
