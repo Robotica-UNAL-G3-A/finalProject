@@ -161,7 +161,7 @@ Para más detalle el código fuente puede encontrarse en la carpeta [RAPID](./RA
 ## Resultados
 Para el desarrollo de este proyecto se inició verificando la conexión neumática de la ventosa, seguido fue necesario verificar el voltaje de alimentación de la ventosa e identificar con una fuente de alimentación la conexión que activa y desactiva el sistema. Posterior se carga el programa RAPID en un FlexPendant del robot industrial ABB IRB 140 por medio de una USB y se ejecutan las rutinas como se ve a continuación:
 
-[![Alt text](https://img.youtube.com/vi/Wdw1Ll6Tfwo/0.jpg)](https://youtu.be/p0Zcg_c9rNU)
+[![Alt text](https://img.youtube.com/vi/p0Zcg_c9rNU/0.jpg)](https://youtu.be/p0Zcg_c9rNU)
 
 ## Conclusiones 
 - El manejo de la herramienta de tipo gancho asi como la manija del valde, dificultan el proceso de diseño de rutina, dado que al no existir una conexión rigida no se pueda determinar la ubicación  del objeto a partir de la posición del efector final. 
